@@ -58,10 +58,10 @@ function CircularScore({ score, size = 120 }: { score: number; size?: number }) 
 // Lead List Dashboard Preview - Dark themed to match mockups
 function LeadListDashboard() {
   const members = [
-    { rank: 1, name: "MemberSignal", score: 92, drivers: ["PayPal"], tenure: "2 year", branch: "Branch", summary: "Member demonstrates strong business commercial financial affi..." },
-    { rank: 2, name: "Man Cutkatch", score: 85, drivers: ["Shopify", "Square"], tenure: "1 year", branch: "Branch", summary: "Business processed integer for business soarinsms and common..." },
-    { rank: 3, name: "Keni Hoeon", score: 78, drivers: ["Shopify"], tenure: "1 year", branch: "Branch", summary: "AI Summary is an action ooe add customerixis and vere business to..." },
-    { rank: 4, name: "Sane Velmand", score: 72, drivers: ["PayPal"], tenure: "4 years", branch: "Mamontarg", summary: "Member llasco.oncen iommerce and to end rcasnticved business..." },
+    { rank: 1, name: "Sarah Mitchell", score: 92, drivers: ["Shopify"], tenure: "3 years", branch: "Downtown", summary: "High-volume e-commerce seller with consistent payment processor deposits..." },
+    { rank: 2, name: "Marcus Chen", score: 85, drivers: ["Square", "Stripe"], tenure: "2 years", branch: "Westside", summary: "Retail business owner with multiple revenue streams and growing deposits..." },
+    { rank: 3, name: "Jennifer Adams", score: 78, drivers: ["PayPal"], tenure: "4 years", branch: "Downtown", summary: "Freelance consultant with regular business software subscriptions..." },
+    { rank: 4, name: "David Thompson", score: 72, drivers: ["Stripe"], tenure: "1 year", branch: "Northgate", summary: "New business signals detected, appears to be starting online services..." },
   ]
 
   return (
@@ -193,11 +193,11 @@ function LeadListDashboard() {
 // Member Detail View Preview - Dark themed with cream member card
 function MemberDetailView() {
   const transactions = [
-    { date: "Jan 12/21", merchant: "Credit Processor", amount: "$130.00", classification: "Payment Processor Deposit" },
-    { date: "Jan 12/21", merchant: "Business Name", amount: "$150.00", classification: "Business Software Subscription" },
-    { date: "Jan 12/21", merchant: "Shopify Name", amount: "$30.00", classification: "Payment Processor Deposit" },
-    { date: "Jan 12/21", merchant: "Merritant Name", amount: "$120.00", classification: "Likely Supplier Payment" },
-    { date: "Jan 12/21", merchant: "PayPal", amount: "$30.00", classification: "Likely Supplier Payment" },
+    { date: "Mar 15", merchant: "Stripe", amount: "$2,450.00", classification: "Payment Processor Deposit" },
+    { date: "Mar 14", merchant: "QuickBooks", amount: "$79.99", classification: "Business Software" },
+    { date: "Mar 12", merchant: "Shopify Payout", amount: "$1,890.00", classification: "E-commerce Revenue" },
+    { date: "Mar 10", merchant: "Office Depot", amount: "$234.50", classification: "Business Supplies" },
+    { date: "Mar 08", merchant: "Square Deposit", amount: "$567.00", classification: "Payment Processor Deposit" },
   ]
 
   return (
@@ -228,31 +228,31 @@ function MemberDetailView() {
         
         {/* Member Card - Cream themed */}
         <div className="w-44 p-4 bg-cream">
-          <h3 className="text-lg font-semibold text-cream-foreground">Member<br/>Johnmson</h3>
+          <h3 className="text-lg font-semibold text-cream-foreground">Sarah<br/>Mitchell</h3>
           <div className="flex justify-center my-3">
             <div className="relative">
               <span className="absolute -top-1 left-1/2 -translate-x-1/2 text-xs text-cream-foreground/70">Score</span>
-              <CircularScore score={30} size={80} />
+              <CircularScore score={78} size={80} />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2 text-xs text-cream-foreground border-t border-cream-foreground/20 pt-2">
             <div>
               <div className="font-semibold">Tenure</div>
-              <div className="text-cream-foreground/70">Tenure</div>
+              <div className="text-cream-foreground/70">3 years</div>
             </div>
             <div>
               <div className="font-semibold">Branch</div>
-              <div className="text-cream-foreground/70">Branch</div>
+              <div className="text-cream-foreground/70">Downtown</div>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2 text-xs text-cream-foreground mt-2">
             <div>
-              <div className="font-bold text-base">2,61$</div>
+              <div className="font-bold text-base">$4,850</div>
               <div className="text-cream-foreground/70">Avg. monthly deposits</div>
             </div>
             <div>
-              <div className="font-semibold">Average</div>
-              <div className="text-cream-foreground/70">Monthly deposits</div>
+              <div className="font-semibold">Above Avg</div>
+              <div className="text-cream-foreground/70">vs. segment</div>
             </div>
           </div>
         </div>
@@ -284,7 +284,7 @@ function MemberDetailView() {
                   <td className="py-1.5 text-white">{tx.amount}</td>
                   <td className="py-1.5">
                     <span className={`px-2 py-0.5 rounded-full text-[10px] ${
-                      tx.classification.includes("Processor") 
+                      tx.classification.includes("Deposit") || tx.classification.includes("Revenue")
                         ? "bg-primary text-white" 
                         : "border border-[#3a3530] text-white/80"
                     }`}>
@@ -300,7 +300,7 @@ function MemberDetailView() {
           <div className="mt-3 p-3 rounded-lg bg-primary text-white">
             <h5 className="font-semibold text-sm mb-1">Suggested Talking Point</h5>
             <p className="text-xs opacity-90">
-              AI-generated sentence specific the name of your business business type is a detected signal.
+              Sarah shows strong e-commerce activity through Shopify and Stripe. Ask about her online store and if she needs merchant services or a business line of credit.
             </p>
           </div>
         </div>
@@ -319,14 +319,14 @@ function OutreachScriptGenerator() {
       <div className="flex items-center gap-3 p-3 rounded-xl bg-white/50 border border-[#d5cdc2] mb-4">
         <div className="w-10 h-10 rounded-full bg-[#c5bdb2]" />
         <div>
-          <div className="font-semibold text-[#2a2520]">Member Jonnson</div>
-          <div className="text-xs text-[#5a5550]">Context Recap</div>
+          <div className="font-semibold text-[#2a2520]">Sarah Mitchell</div>
+          <div className="text-xs text-[#5a5550]">E-commerce Owner</div>
         </div>
         <div className="ml-auto flex items-center gap-2">
-          <CircularScore score={50} size={40} />
+          <CircularScore score={78} size={40} />
           <div className="text-right">
             <div className="text-xs text-[#5a5550]">Detected</div>
-            <div className="text-xs font-medium text-[#2a2520]">Business type</div>
+            <div className="text-xs font-medium text-[#2a2520]">Retail Business</div>
           </div>
           <div className="w-6 h-6 bg-primary/20 rounded flex items-center justify-center">
             <BarChart3 className="w-3 h-3 text-primary" />
@@ -338,10 +338,10 @@ function OutreachScriptGenerator() {
       <div className="p-4 rounded-xl bg-white/50 border border-[#d5cdc2] mb-4">
         <h4 className="font-semibold text-[#2a2520] mb-2">Generated script</h4>
         <p className="text-sm text-[#3a3530] leading-relaxed">
-          I lam personalized name <span className="text-primary font-medium">Member Sanar</span>, business, persoonalized sentences at <span className="text-primary font-medium">credit name</span> of your business type.
+          {'"'}Hi <span className="text-primary font-medium">Sarah</span>, I noticed your account has been growing steadily. It looks like your <span className="text-primary font-medium">online retail business</span> is doing well!{'"'}
         </p>
         <p className="text-sm text-[#3a3530] leading-relaxed mt-2">
-          We also have to be <span className="text-primary font-medium">business type</span> sentences and emenge your sentences at the <span className="underline">voll details</span> of your business type.
+          {'"'}Have you considered a <span className="text-primary font-medium">business line of credit</span> to help manage inventory? We also offer <span className="underline">merchant services</span> with lower fees than most processors.{'"'}
         </p>
       </div>
       
