@@ -553,6 +553,34 @@ export default function MemberSignalLanding() {
         </div>
       </section>
       
+      {/* Compliance Section */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-10 items-center">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
+                <span className="text-xs text-primary font-medium">BSA/AML Compliance</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#2a2520]">
+                Turn a Compliance Gap Into a Business Opportunity
+              </h2>
+              <p className="text-[#5a5550] mb-4">
+                The FFIEC BSA/AML examination manual requires credit unions to identify accounts being used for business purposes and apply enhanced due diligence.
+              </p>
+              <p className="text-[#5a5550]">
+                MemberSignal helps you meet this regulatory obligation proactively — while also surfacing revenue opportunities your compliance team will thank you for finding.
+              </p>
+            </div>
+            <div className="lg:w-80 p-6 rounded-2xl bg-[#f5f0e8] border border-[#e0d8cd]">
+              <p className="text-[#3a3530] italic text-sm leading-relaxed">
+                {'"'}Banks must direct resources to accounts that pose the greatest risk... there are federal laws in place to prevent money laundering when personal accounts are used for business transactions.{'"'}
+              </p>
+              <p className="text-xs text-[#7a7570] mt-3">— FFIEC BSA/AML Examination Manual</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Now Section */}
       <section className="py-20 px-6 bg-primary">
         <div className="max-w-7xl mx-auto">
