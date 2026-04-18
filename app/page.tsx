@@ -407,15 +407,14 @@ export default function MemberSignalLanding() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm text-primary font-medium">AI-Powered Member Intelligence</span>
+              <span className="text-sm text-primary font-medium">Built for Credit Unions</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#2a2520] leading-tight text-balance">
-              Turn Transaction Data Into <span className="text-primary">Business Opportunities</span>
+              Your Members Are Running Businesses. <span className="text-primary">Do You Know Which Ones?</span>
             </h1>
             <p className="text-lg text-[#5a5550] mb-8 leading-relaxed text-pretty">
-              MemberSignal helps credit unions identify business members hiding in plain sight. 
-              Our AI analyzes transaction patterns to surface commercial opportunities and generate 
-              personalized outreach scripts.
+              Up to 27% of your members have a side hustle or small business — but most are invisible in your core system. 
+              MemberSignal uses AI to detect business signals in transaction data and generate personalized outreach scripts.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="bg-primary text-white hover:bg-primary/90 text-lg px-8 py-6">
@@ -423,7 +422,7 @@ export default function MemberSignalLanding() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button size="lg" variant="outline" className="border-[#c5bdb2] text-[#2a2520] hover:bg-[#e8e0d5] text-lg px-8 py-6">
-                Watch Video
+                See How It Works
               </Button>
             </div>
           </div>
@@ -436,13 +435,53 @@ export default function MemberSignalLanding() {
         </div>
       </section>
       
+      {/* Problem Section */}
+      <section className="py-16 px-6 bg-[#1a1814] text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">The Hidden Business Problem</h2>
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              Industry research confirms: business owners are hiding in your retail checking accounts.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
+              <div className="text-4xl font-bold text-primary mb-2">80%</div>
+              <div className="text-white/90 font-medium mb-1">of credit union leaders</div>
+              <p className="text-sm text-white/60">plan to expand SMB services in 2025-2026, up from 65% in 2023.</p>
+              <p className="text-xs text-white/40 mt-2">Source: Jack Henry 2025 Strategy Benchmark</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
+              <div className="text-4xl font-bold text-primary mb-2">59%</div>
+              <div className="text-white/90 font-medium mb-1">of small business owners</div>
+              <p className="text-sm text-white/60">mix business and personal finances — no separate business account.</p>
+              <p className="text-xs text-white/40 mt-2">Source: CFPB Making Ends Meet Survey, 2024</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
+              <div className="text-4xl font-bold text-primary mb-2">5.6M</div>
+              <div className="text-white/90 font-medium mb-1">new businesses formed</div>
+              <p className="text-sm text-white/60">in 2025 alone — many started by your existing members.</p>
+              <p className="text-xs text-white/40 mt-2">Source: U.S. Census Bureau BFS, 2026</p>
+            </div>
+          </div>
+          
+          <div className="mt-10 p-6 rounded-2xl bg-primary/20 border border-primary/30 max-w-3xl mx-auto">
+            <p className="text-center text-white/90 italic">
+              {'"'}Your data and analytics capabilities are crucial to uncovering camouflaged SMB owners hidden in retail checking accounts.{'"'}
+            </p>
+            <p className="text-center text-sm text-white/50 mt-2">— Jack Henry 2025 Strategy Benchmark</p>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2a2520]">Powerful Features for Credit Unions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2a2520]">How MemberSignal Works</h2>
             <p className="text-lg text-[#5a5550] max-w-2xl mx-auto">
-              Everything you need to identify, understand, and engage business members effectively.
+              We analyze the transaction signals already in your core data to identify hidden business owners.
             </p>
           </div>
           
@@ -450,18 +489,18 @@ export default function MemberSignalLanding() {
             {[
               {
                 icon: <BarChart3 className="w-6 h-6" />,
-                title: "Business Signal Scoring",
-                description: "AI-powered scoring that analyzes transaction patterns to identify members with business activity."
+                title: "Transaction Signal Detection",
+                description: "We detect Stripe, Square, PayPal, Shopify deposits, business software subscriptions, and supplier payments — all proven indicators of business activity."
               },
               {
                 icon: <Users className="w-6 h-6" />,
-                title: "Member Intelligence",
-                description: "Deep insights into member behavior, business type detection, and growth potential analysis."
+                title: "Business Signal Scoring",
+                description: "Each member gets a score based on transaction patterns. Prioritize outreach to the highest-confidence leads first."
               },
               {
                 icon: <Send className="w-6 h-6" />,
-                title: "Smart Outreach Scripts",
-                description: "Auto-generated, personalized conversation scripts based on detected business signals."
+                title: "AI Outreach Scripts",
+                description: "One-click personalized scripts referencing detected business type, transaction patterns, and relevant CU products."
               }
             ].map((feature, i) => (
               <div key={i} className="p-6 rounded-2xl bg-[#f5f0e8] border border-[#e0d8cd] hover:border-primary/50 transition-colors">
@@ -514,22 +553,31 @@ export default function MemberSignalLanding() {
         </div>
       </section>
       
-      {/* Stats Section */}
+      {/* Why Now Section */}
       <section className="py-20 px-6 bg-primary">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">The Competitive Threat</h2>
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              Fintechs are already targeting your business members with loans — using the same transaction data you have.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 text-center">
             {[
-              { value: "40%", label: "Increase in Business Loans" },
-              { value: "3.2x", label: "ROI on Commercial Outreach" },
-              { value: "85%", label: "Accuracy in Detection" },
-              { value: "15min", label: "Avg. Time to First Insight" }
+              { value: "42%", label: "of small businesses use a fintech alongside their primary bank" },
+              { value: "$6.35B", label: "in embedded loans disbursed by fintechs in 2024" },
+              { value: "57%", label: "of small businesses bank with large nationals — not CUs" }
             ].map((stat, i) => (
-              <div key={i}>
-                <div className="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">{stat.value}</div>
-                <div className="text-primary-foreground/80">{stat.label}</div>
+              <div key={i} className="p-6 rounded-2xl bg-white/10">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-3">{stat.value}</div>
+                <div className="text-white/80 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
+          <p className="text-center text-white/60 text-sm mt-8 max-w-2xl mx-auto">
+            A member routing $3,000/month through Stripe is already being targeted by Stripe Capital for a loan. 
+            If you don&apos;t know they&apos;re running a business, you can&apos;t compete.
+          </p>
         </div>
       </section>
       
@@ -537,10 +585,10 @@ export default function MemberSignalLanding() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2a2520]">
-            Ready to Discover Hidden Business Members?
+            Stop Losing Business Members to Fintechs
           </h2>
           <p className="text-lg text-[#5a5550] mb-8">
-            Join forward-thinking credit unions using MemberSignal to grow their commercial portfolios.
+            See which of your members are running businesses — and start the conversation before someone else does.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-primary text-white hover:bg-primary/90 text-lg px-8 py-6">
