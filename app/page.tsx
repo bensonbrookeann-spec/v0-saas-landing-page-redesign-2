@@ -413,8 +413,8 @@ export default function MemberSignalLanding() {
               Your Members Are Running Businesses. <span className="text-primary">Do You Know Which Ones?</span>
             </h1>
             <p className="text-lg text-[#5a5550] mb-8 leading-relaxed text-pretty">
-              Up to 27% of your members have a side hustle or small business — but most are invisible in your core system. 
-              MemberSignal uses AI to detect business signals in transaction data and generate personalized outreach scripts.
+              59% of small business owners don&apos;t have a separate business account — they&apos;re hiding in your retail checking. 
+              MemberSignal detects business signals in transaction data so you can find them first.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="bg-primary text-white hover:bg-primary/90 text-lg px-8 py-6">
