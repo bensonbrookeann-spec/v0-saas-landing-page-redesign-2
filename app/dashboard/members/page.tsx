@@ -31,7 +31,7 @@ function ScoreIndicator({ score }: { score: number }) {
   return (
     <div className="flex items-center gap-2">
       <div className={`w-3 h-3 rounded-full ${getColor()}`} />
-      <span className="text-white">{score}</span>
+      <span className="text-[#2a2520] font-semibold">{score}</span>
     </div>
   )
 }
@@ -47,16 +47,16 @@ export default function MembersListPage() {
   return (
     <div className="p-6">
       {/* Page Title */}
-      <h1 className="text-2xl font-semibold text-white mb-6">Members</h1>
+      <h1 className="text-2xl font-semibold text-[#2a2520] mb-6">Members</h1>
 
       {/* Search */}
       <div className="relative mb-6 max-w-md">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2a2520]/40" />
         <Input
           placeholder="Search members..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10 bg-[#2a2520] border-[#3a3530] text-white placeholder:text-white/40"
+          className="pl-10 bg-white border-[#e8e4de] text-[#2a2520] placeholder:text-[#2a2520]/40"
         />
       </div>
 
@@ -66,18 +66,18 @@ export default function MembersListPage() {
           <Link
             key={member.id}
             href={`/dashboard/members/${member.id}`}
-            className="bg-[#2a2520] rounded-xl p-4 border border-[#3a3530] hover:border-primary/50 transition-colors"
+            className="bg-white rounded-xl p-4 border border-[#e8e4de] hover:border-primary/50 transition-colors"
           >
             <div className="flex items-start justify-between mb-3">
               <div>
-                <h3 className="font-semibold text-white">{member.name}</h3>
-                <p className="text-sm text-white/60">{member.branch}</p>
+                <h3 className="font-semibold text-[#2a2520]">{member.name}</h3>
+                <p className="text-sm text-[#2a2520]/60">{member.branch}</p>
               </div>
               <ScoreIndicator score={member.score} />
             </div>
             <div className="flex items-center justify-between text-sm">
-              <span className="text-white/60">Tenure: {member.tenure}</span>
-              <span className="px-2 py-0.5 rounded-full text-xs bg-green-500/20 text-green-400">
+              <span className="text-[#2a2520]/60">Tenure: {member.tenure}</span>
+              <span className="px-2 py-0.5 rounded-full text-xs bg-green-500/20 text-green-600">
                 {member.status}
               </span>
             </div>
@@ -87,7 +87,7 @@ export default function MembersListPage() {
 
       {filteredMembers.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-white/60">No members found matching your search.</p>
+          <p className="text-[#2a2520]/60">No members found matching your search.</p>
         </div>
       )}
     </div>

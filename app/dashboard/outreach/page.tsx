@@ -98,24 +98,24 @@ export default function OutreachPage() {
   return (
     <div className="p-6">
       {/* Page Title */}
-      <h1 className="text-2xl font-semibold text-white mb-6">Outreach</h1>
+      <h1 className="text-2xl font-semibold text-[#2a2520] mb-6">Outreach</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Pending Outreach Suggestions */}
         <div className="lg:col-span-1">
-          <div className="bg-[#2a2520] rounded-xl p-4 border border-[#3a3530]">
-            <h2 className="text-lg font-semibold text-white mb-4">Suggested Outreach</h2>
+          <div className="bg-white rounded-xl p-4 border border-[#e8e4de]">
+            <h2 className="text-lg font-semibold text-[#2a2520] mb-4">Suggested Outreach</h2>
             <div className="space-y-3">
               {mockPendingOutreach.map((member) => (
                 <div
                   key={member.id}
-                  className="p-3 rounded-lg bg-[#1a1814] border border-[#3a3530]"
+                  className="p-3 rounded-lg bg-[#faf8f5] border border-[#e8e4de]"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium text-white">{member.name}</span>
-                    <span className="text-sm text-primary font-medium">{member.score}</span>
+                    <span className="font-medium text-[#2a2520]">{member.name}</span>
+                    <span className="text-sm text-primary font-semibold">{member.score}</span>
                   </div>
-                  <p className="text-xs text-white/60 mb-3">{member.reason}</p>
+                  <p className="text-xs text-[#2a2520]/60 mb-3">{member.reason}</p>
                   <Link href={`/dashboard/outreach/${member.id}`}>
                     <Button size="sm" className="w-full bg-primary text-white hover:bg-primary/90">
                       Generate Script
@@ -129,23 +129,23 @@ export default function OutreachPage() {
 
         {/* Outreach History */}
         <div className="lg:col-span-2">
-          <div className="bg-[#2a2520] rounded-xl p-4 border border-[#3a3530]">
+          <div className="bg-white rounded-xl p-4 border border-[#e8e4de]">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-white">Outreach History</h2>
+              <h2 className="text-lg font-semibold text-[#2a2520]">Outreach History</h2>
               <div className="relative w-64">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2a2520]/40" />
                 <Input
                   placeholder="Search history..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 bg-[#1a1814] border-[#3a3530] text-white placeholder:text-white/40 h-9"
+                  className="pl-10 bg-[#faf8f5] border-[#e8e4de] text-[#2a2520] placeholder:text-[#2a2520]/40 h-9"
                 />
               </div>
             </div>
 
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-[#3a3530] text-white/60">
+                <tr className="border-b border-[#e8e4de] text-[#2a2520]/60">
                   <th className="text-left py-2 font-medium">Member</th>
                   <th className="text-left py-2 font-medium">Status</th>
                   <th className="text-left py-2 font-medium">Generated</th>
@@ -155,11 +155,11 @@ export default function OutreachPage() {
               </thead>
               <tbody>
                 {filteredHistory.map((item) => (
-                  <tr key={item.id} className="border-b border-[#3a3530]/50">
+                  <tr key={item.id} className="border-b border-[#e8e4de]">
                     <td className="py-3">
                       <Link
                         href={`/dashboard/members/${item.memberId}`}
-                        className="text-white hover:text-primary transition-colors"
+                        className="text-[#2a2520] font-medium hover:text-primary transition-colors"
                       >
                         {item.memberName}
                       </Link>
@@ -167,8 +167,8 @@ export default function OutreachPage() {
                     <td className="py-3">
                       <StatusBadge status={item.status} />
                     </td>
-                    <td className="py-3 text-white/60">{item.scriptGenerated}</td>
-                    <td className="py-3 text-white/60 max-w-48 truncate">
+                    <td className="py-3 text-[#2a2520]/60">{item.scriptGenerated}</td>
+                    <td className="py-3 text-[#2a2520]/60 max-w-48 truncate">
                       {item.outcome || "-"}
                     </td>
                     <td className="py-3">
@@ -185,7 +185,7 @@ export default function OutreachPage() {
 
             {filteredHistory.length === 0 && (
               <div className="text-center py-8">
-                <p className="text-white/60">No outreach history found.</p>
+                <p className="text-[#2a2520]/60">No outreach history found.</p>
               </div>
             )}
           </div>

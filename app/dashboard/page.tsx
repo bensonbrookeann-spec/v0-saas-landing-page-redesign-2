@@ -130,11 +130,14 @@ function DriverBadge({ name, color }: { name: string; color: string }) {
 // Score Bar Component
 function ScoreBar({ score }: { score: number }) {
   return (
-    <div className="w-24 h-2 bg-[#2a2520] rounded-full overflow-hidden">
-      <div
-        className="h-full bg-primary rounded-full transition-all duration-300"
-        style={{ width: `${score}%` }}
-      />
+    <div className="flex items-center gap-2">
+      <span className="text-sm font-semibold text-[#2a2520] w-8">{score}</span>
+      <div className="w-20 h-2 bg-[#e8e4de] rounded-full overflow-hidden">
+        <div
+          className="h-full bg-primary rounded-full transition-all duration-300"
+          style={{ width: `${score}%` }}
+        />
+      </div>
     </div>
   )
 }
@@ -157,17 +160,17 @@ export default function LeadListDashboard() {
   return (
     <div className="p-6">
       {/* Page Title */}
-      <h1 className="text-2xl font-semibold text-white mb-6">Lead List Dashboard</h1>
+      <h1 className="text-2xl font-semibold text-[#2a2520] mb-6">Lead List Dashboard</h1>
 
       {/* Filters */}
       <div className="flex items-center gap-4 mb-6">
-        <span className="text-sm text-white/60">Filters</span>
+        <span className="text-sm text-[#2a2520]/60">Filters</span>
         
         <Select defaultValue="all">
-          <SelectTrigger className="w-32 bg-[#2a2520] border-[#3a3530] text-white/80 rounded-full">
+          <SelectTrigger className="w-32 bg-white border-[#e8e4de] text-[#2a2520] rounded-full">
             <SelectValue placeholder="Branch" />
           </SelectTrigger>
-          <SelectContent className="bg-[#2a2520] border-[#3a3530]">
+          <SelectContent className="bg-white border-[#e8e4de]">
             <SelectItem value="all">Branch</SelectItem>
             <SelectItem value="downtown">Downtown</SelectItem>
             <SelectItem value="westside">Westside</SelectItem>
@@ -176,10 +179,10 @@ export default function LeadListDashboard() {
         </Select>
 
         <Select defaultValue="all">
-          <SelectTrigger className="w-32 bg-[#2a2520] border-[#3a3530] text-white/80 rounded-full">
+          <SelectTrigger className="w-32 bg-white border-[#e8e4de] text-[#2a2520] rounded-full">
             <SelectValue placeholder="Balance" />
           </SelectTrigger>
-          <SelectContent className="bg-[#2a2520] border-[#3a3530]">
+          <SelectContent className="bg-white border-[#e8e4de]">
             <SelectItem value="all">Balance</SelectItem>
             <SelectItem value="high">$50k+</SelectItem>
             <SelectItem value="medium">$10k-$50k</SelectItem>
@@ -188,10 +191,10 @@ export default function LeadListDashboard() {
         </Select>
 
         <Select defaultValue="all">
-          <SelectTrigger className="w-32 bg-[#2a2520] border-[#3a3530] text-white/80 rounded-full">
+          <SelectTrigger className="w-32 bg-white border-[#e8e4de] text-[#2a2520] rounded-full">
             <SelectValue placeholder="Tenure" />
           </SelectTrigger>
-          <SelectContent className="bg-[#2a2520] border-[#3a3530]">
+          <SelectContent className="bg-white border-[#e8e4de]">
             <SelectItem value="all">Tenure</SelectItem>
             <SelectItem value="5plus">5+ years</SelectItem>
             <SelectItem value="2to5">2-5 years</SelectItem>
@@ -200,10 +203,10 @@ export default function LeadListDashboard() {
         </Select>
 
         <Select defaultValue="all">
-          <SelectTrigger className="w-36 bg-[#2a2520] border-[#3a3530] text-white/80 rounded-full">
+          <SelectTrigger className="w-36 bg-white border-[#e8e4de] text-[#2a2520] rounded-full">
             <SelectValue placeholder="Score Range" />
           </SelectTrigger>
-          <SelectContent className="bg-[#2a2520] border-[#3a3530]">
+          <SelectContent className="bg-white border-[#e8e4de]">
             <SelectItem value="all">Score Range</SelectItem>
             <SelectItem value="high">80-100</SelectItem>
             <SelectItem value="medium">50-79</SelectItem>
@@ -213,15 +216,15 @@ export default function LeadListDashboard() {
       </div>
 
       {/* Data Table */}
-      <div className="rounded-lg overflow-hidden">
+      <div className="bg-white rounded-xl border border-[#e8e4de] overflow-hidden">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-[#2a2520] text-white/60">
+            <tr className="border-b border-[#e8e4de] text-[#2a2520]/60 bg-[#faf8f5]">
               <th className="text-left py-3 px-4 font-medium">Rank</th>
               <th className="text-left py-3 px-4 font-medium">
                 <button
                   onClick={() => handleSort("name")}
-                  className="flex items-center gap-1 hover:text-white transition-colors"
+                  className="flex items-center gap-1 hover:text-[#2a2520] transition-colors"
                 >
                   Member Name
                   <ArrowUpDown className="w-3 h-3" />
@@ -239,13 +242,13 @@ export default function LeadListDashboard() {
             {mockMembers.map((member) => (
               <tr
                 key={member.id}
-                className="border-b border-[#2a2520]/50 hover:bg-[#2a2520]/30 transition-colors"
+                className="border-b border-[#e8e4de] hover:bg-[#faf8f5] transition-colors"
               >
-                <td className="py-3 px-4 text-white">{member.rank}</td>
+                <td className="py-3 px-4 text-[#2a2520]">{member.rank}</td>
                 <td className="py-3 px-4">
                   <Link
                     href={`/dashboard/members/${member.id}`}
-                    className="text-white hover:text-primary transition-colors"
+                    className="text-[#2a2520] font-medium hover:text-primary transition-colors"
                   >
                     {member.name}
                   </Link>
@@ -260,13 +263,13 @@ export default function LeadListDashboard() {
                     ))}
                   </div>
                 </td>
-                <td className="py-3 px-4 text-white">{member.tenure}</td>
+                <td className="py-3 px-4 text-[#2a2520]">{member.tenure}</td>
                 <td className="py-3 px-4">
-                  <span className="px-2 py-0.5 rounded text-xs bg-[#2a2520] text-white/80 border border-[#3a3530]">
+                  <span className="px-2 py-0.5 rounded text-xs bg-[#f5f3f0] text-[#2a2520] border border-[#e8e4de]">
                     {member.branch}
                   </span>
                 </td>
-                <td className="py-3 px-4 text-white/70 text-xs max-w-xs">
+                <td className="py-3 px-4 text-[#2a2520]/70 text-xs max-w-xs">
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
@@ -276,7 +279,7 @@ export default function LeadListDashboard() {
                       </TooltipTrigger>
                       <TooltipContent 
                         side="top" 
-                        className="max-w-sm bg-[#2a2520] border-[#3a3530] text-white/90 p-3"
+                        className="max-w-sm bg-[#2a2520] border-[#3a3530] text-white p-3"
                       >
                         <p className="text-xs leading-relaxed">{member.summary}</p>
                       </TooltipContent>
@@ -304,7 +307,7 @@ export default function LeadListDashboard() {
         <Button
           variant="ghost"
           size="icon"
-          className="w-8 h-8 text-white/60 hover:text-white"
+          className="w-8 h-8 text-[#2a2520]/60 hover:text-[#2a2520]"
           onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
           disabled={currentPage === 1}
         >
@@ -319,7 +322,7 @@ export default function LeadListDashboard() {
             className={`w-8 h-8 ${
               currentPage === page
                 ? "bg-[#2a2520] text-white"
-                : "text-white/60 hover:text-white"
+                : "text-[#2a2520]/60 hover:text-[#2a2520]"
             }`}
             onClick={() => setCurrentPage(page)}
           >
@@ -327,12 +330,12 @@ export default function LeadListDashboard() {
           </Button>
         ))}
         
-        <span className="text-white/40 px-2">...</span>
+        <span className="text-[#2a2520]/40 px-2">...</span>
         
         <Button
           variant="ghost"
           size="icon"
-          className="w-8 h-8 text-white/60 hover:text-white"
+          className="w-8 h-8 text-[#2a2520]/60 hover:text-[#2a2520]"
           onClick={() => setCurrentPage(totalPages)}
         >
           {totalPages}
@@ -341,7 +344,7 @@ export default function LeadListDashboard() {
         <Button
           variant="ghost"
           size="icon"
-          className="w-8 h-8 text-white/60 hover:text-white"
+          className="w-8 h-8 text-[#2a2520]/60 hover:text-[#2a2520]"
           onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
           disabled={currentPage === totalPages}
         >
