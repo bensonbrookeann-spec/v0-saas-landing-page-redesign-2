@@ -11,12 +11,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 
 // Mock data for the lead list
 const mockMembers = [
@@ -297,22 +291,10 @@ export default function LeadListDashboard() {
                     {member.branch}
                   </span>
                 </td>
-                <td className="py-4 px-5 text-[#6b5f54] text-xs max-w-xs">
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <p className="line-clamp-2 cursor-help leading-relaxed">
-                          {member.summary}
-                        </p>
-                      </TooltipTrigger>
-                      <TooltipContent 
-                        side="top" 
-                        className="max-w-sm bg-[#3d3530] border-[#4d4540] text-[#f5f0ea] p-3 shadow-xl"
-                      >
-                        <p className="text-xs leading-relaxed">{member.summary}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                <td className="py-4 px-5 text-[#3d3530] text-sm max-w-md">
+                  <p className="leading-relaxed">
+                    {member.summary}
+                  </p>
                 </td>
                 <td className="py-4 px-5">
                   <Link href={`/dashboard/outreach/${member.id}`}>
