@@ -23,12 +23,16 @@ const mockMembers = [
   {
     id: "1",
     rank: 1,
-    name: "Sarah Mitchell",
-    score: 92,
-    drivers: [{ name: "PayPal", color: "bg-[#003087]" }],
-    tenure: "2 years",
+    name: "Sarah Chen",
+    score: 94,
+    drivers: [
+      { name: "Etsy", color: "bg-[#f56400]" },
+      { name: "Stripe", color: "bg-[#635bff]" },
+      { name: "QuickBooks", color: "bg-[#2ca01c]" },
+    ],
+    tenure: "3 years",
     branch: "Downtown",
-    summary: "High-volume PayPal deposits averaging $12K/month suggest established e-commerce business. Recent activity spike indicates seasonal inventory preparation.",
+    summary: "Chen Ceramics LLC detected. Etsy deposits + Stripe payouts + QuickBooks subscription + Faire wholesale payment. 847 Etsy sales, est. $18K-$28K annual revenue. Business registered 8 months ago. High probability of needing business banking services.",
   },
   {
     id: "2",
@@ -112,6 +116,30 @@ function DriverBadge({ name, color }: { name: string; color: string }) {
         return (
           <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3 3h18v18H3V3zm15.5 2.5h-13v13h13v-13z" />
+          </svg>
+        )
+      case "Etsy":
+        return (
+          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8.559 3.89c0-.558.293-.706 1.027-.706h5.588c2.086 0 2.704 1.266 3.017 2.853h.851l-.205-4.086H4.86l.088 4.086h.88c.41-1.853.616-2.853 2.73-2.853zm.733 15.66v-6.97h3.5c1.88 0 2.3.97 2.593 2.557h.851l-.147-6.263h-.851c-.234 1.441-.654 2.5-2.534 2.5h-3.412V5.89c0-.735.616-.852 1.086-.852h3.647c2.476 0 3.382 1.177 4.057 3.383h.822l-.265-4.559H5.713v.822c1.557 0 2.408.294 2.408 1.5v12.529c0 1.205-.88 1.529-2.408 1.529v.793h8.998v-.793c-1.937 0-2.408-.412-2.408-1.793z" />
+          </svg>
+        )
+      case "Stripe":
+        return (
+          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z" />
+          </svg>
+        )
+      case "QuickBooks":
+        return (
+          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 16.8c-.794 0-1.438-.644-1.438-1.438V8.638c0-.794-.644-1.438-1.438-1.438h-2.13v10.362c0 .794-.644 1.438-1.438 1.438-.794 0-1.438-.644-1.438-1.438V7.2h-2.13c-.794 0-1.438.644-1.438 1.438v6.724c0 .794-.644 1.438-1.438 1.438s-1.438-.644-1.438-1.438V8.638c0-2.383 1.931-4.313 4.313-4.313h5.692c2.383 0 4.313 1.931 4.313 4.313v6.724c0 .794-.644 1.438-1.438 1.438z" />
+          </svg>
+        )
+      case "Faire":
+        return (
+          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           </svg>
         )
       default:
