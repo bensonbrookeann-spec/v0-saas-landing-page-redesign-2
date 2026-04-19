@@ -20,6 +20,7 @@ const mockMemberData: Record<string, {
   branch: string
   avgMonthlyDeposits: string
   monthlyAverage: string
+  businessName: string
   transactions: Array<{
     date: string
     merchant: string
@@ -30,30 +31,32 @@ const mockMemberData: Record<string, {
   suggestedTalkingPoint: string
 }> = {
   "1": {
-    name: "Member Johnnson",
-    score: 30,
-    tenure: "Tenure",
-    branch: "Branch",
-    avgMonthlyDeposits: "2,615",
-    monthlyAverage: "Average",
+    name: "Sarah Chen",
+    score: 94,
+    tenure: "3 years",
+    branch: "Downtown",
+    avgMonthlyDeposits: "2,180",
+    monthlyAverage: "Growing",
+    businessName: "Chen Ceramics LLC",
     transactions: [
-      { date: "Jan 12/21", merchant: "Credit Processor", amount: "$130.00", classification: "Payment Processor Deposit", type: "deposit" },
-      { date: "Jan 12/21", merchant: "Business Name", amount: "$150.00", classification: "Business Software Subscription", type: "subscription" },
-      { date: "Jan 12/21", merchant: "Shopify Name", amount: "$30.00", classification: "Payment Processor Deposit", type: "deposit" },
-      { date: "Jan 12/21", merchant: "Merittent Name", amount: "$120.00", classification: "Likely Supplier Payment", type: "payment" },
-      { date: "Jan 12/21", merchant: "PayPal", amount: "$30.00", classification: "Likely Supplier Payment", type: "payment" },
-      { date: "Jan 12/21", merchant: "Marketplace Payout", amount: "$50.00", classification: "Marketplace Payout", type: "payout" },
-      { date: "Jan 12/21", merchant: "Shopify Name", amount: "$190.00", classification: "Marketplace Payout", type: "payout" },
+      { date: "Apr 12", merchant: "Etsy Inc.", amount: "$847.50", classification: "Marketplace Payout", type: "payout" },
+      { date: "Apr 10", merchant: "Stripe", amount: "$1,245.00", classification: "Payment Processor Deposit", type: "deposit" },
+      { date: "Apr 08", merchant: "QuickBooks", amount: "$30.00", classification: "Business Software Subscription", type: "subscription" },
+      { date: "Apr 05", merchant: "Faire Wholesale", amount: "$2,340.00", classification: "Wholesale Payment", type: "deposit" },
+      { date: "Apr 02", merchant: "Etsy Inc.", amount: "$623.75", classification: "Marketplace Payout", type: "payout" },
+      { date: "Mar 28", merchant: "Blick Art Materials", amount: "$189.43", classification: "Likely Supplier Payment", type: "payment" },
+      { date: "Mar 25", merchant: "Stripe", amount: "$890.00", classification: "Payment Processor Deposit", type: "deposit" },
     ],
-    suggestedTalkingPoint: "AI-generated sentence specific the name of your business business type is a detictored signal.",
+    suggestedTalkingPoint: "Sarah has Chen Ceramics LLC registered for 8 months with 847 Etsy sales. She's depositing business income into her personal checking account. Ask if she's considered a business checking account to separate finances and simplify tax prep. Mention our business credit card with 2% cash back on supplies.",
   },
   "2": {
-    name: "Man Cutkatch",
+    name: "Marcus Chen",
     score: 85,
     tenure: "1 year",
-    branch: "Downtown",
+    branch: "Westside",
     avgMonthlyDeposits: "4,850",
     monthlyAverage: "Above Avg",
+    businessName: "Unknown",
     transactions: [
       { date: "Mar 15", merchant: "Stripe", amount: "$2,450.00", classification: "Payment Processor Deposit", type: "deposit" },
       { date: "Mar 14", merchant: "QuickBooks", amount: "$79.99", classification: "Business Software Subscription", type: "subscription" },
@@ -61,7 +64,7 @@ const mockMemberData: Record<string, {
       { date: "Mar 10", merchant: "Office Depot", amount: "$234.50", classification: "Likely Supplier Payment", type: "payment" },
       { date: "Mar 08", merchant: "Square Deposit", amount: "$567.00", classification: "Payment Processor Deposit", type: "deposit" },
     ],
-    suggestedTalkingPoint: "Man shows strong e-commerce activity through Shopify and Square. Ask about their online store and if they need merchant services or a business line of credit.",
+    suggestedTalkingPoint: "Marcus shows strong e-commerce activity through Shopify and Square. Ask about their online store and if they need merchant services or a business line of credit.",
   },
 }
 
@@ -73,6 +76,7 @@ const defaultMember = {
   branch: "Branch",
   avgMonthlyDeposits: "3,200",
   monthlyAverage: "Average",
+  businessName: "Unknown",
   transactions: [
     { date: "Jan 15", merchant: "Stripe", amount: "$1,200.00", classification: "Payment Processor Deposit", type: "deposit" as const },
     { date: "Jan 14", merchant: "QuickBooks", amount: "$49.99", classification: "Business Software Subscription", type: "subscription" as const },

@@ -11,6 +11,7 @@ const mockMemberData: Record<string, {
   name: string
   score: number
   businessType: string
+  businessName: string
   generatedScript: {
     intro: string
     highlightName: string
@@ -22,26 +23,28 @@ const mockMemberData: Record<string, {
   }
 }> = {
   "1": {
-    name: "Member Johnnson",
-    score: 50,
-    businessType: "Retail Business",
+    name: "Sarah Chen",
+    score: 94,
+    businessType: "Handmade Ceramics",
+    businessName: "Chen Ceramics LLC",
     generatedScript: {
-      intro: "I lam personalized name ",
-      highlightName: "Member Sanar",
-      body: ", business, persoonalized sentences at credit name of your business type.",
-      highlightBusinessType: "business type",
-      offer: "We also have to be ",
-      highlightProduct: "voll details",
-      closing: " sentences and emenge your sentences at the of your business type.",
+      intro: "Hi ",
+      highlightName: "Sarah",
+      body: ", this is [Your Name] from [Credit Union]. I've been a fan of your work — I actually saw ",
+      highlightBusinessType: "Chen Ceramics",
+      offer: " on Etsy! I noticed you've been with us for 3 years and wanted to reach out because we have some ",
+      highlightProduct: "business banking options",
+      closing: " that could really help as your business grows. A dedicated business checking account would make tax time so much easier, and we're offering new business members a $200 bonus. Would you have 15 minutes this week to chat about it?",
     },
   },
   "2": {
-    name: "Man Cutkatch",
+    name: "Marcus Chen",
     score: 85,
     businessType: "E-commerce",
+    businessName: "Unknown",
     generatedScript: {
       intro: "Hi ",
-      highlightName: "Man",
+      highlightName: "Marcus",
       body: ", I noticed your account has been growing steadily. It looks like your ",
       highlightBusinessType: "online retail business",
       offer: " is doing well! Have you considered a ",
@@ -56,6 +59,7 @@ const defaultMember = {
   name: "Member Name",
   score: 65,
   businessType: "Small Business",
+  businessName: "Unknown",
   generatedScript: {
     intro: "Hi ",
     highlightName: "there",
@@ -169,7 +173,7 @@ export default function OutreachScriptPage({
             {/* Business Type */}
             <div className="text-right">
               <div className="text-xs text-cream-foreground/60">Detected</div>
-              <div className="text-xs font-medium text-cream-foreground">Business type</div>
+              <div className="text-xs font-medium text-cream-foreground">{member.businessType}</div>
             </div>
 
             {/* Icon */}
