@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, BarChart3, Users, Send, Settings, ChevronDown, Bell, Copy, Phone } from "lucide-react"
+import { ArrowRight, BarChart3, Users, Send, Settings, ChevronDown, Bell, Copy, Phone, Shield, Lock, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -609,14 +609,81 @@ export default function MemberSignalLanding() {
         </div>
       </section>
       
+      {/* Security & Compliance Section */}
+      <section className="py-20 px-6 bg-[#1a1814]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-4">
+              <Shield className="w-4 h-4 text-primary" />
+              <span className="text-xs text-white/80 font-medium">Enterprise Security</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Built for Financial-Grade Security
+            </h2>
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              MemberSignal is designed to meet the expectations of regulated financial institutions.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                icon: <Lock className="w-5 h-5" />,
+                title: "No External Data Exposure",
+                description: "Works within your existing credit union data environment. Your member data never leaves your control."
+              },
+              {
+                icon: <Shield className="w-5 h-5" />,
+                title: "Full Auditability",
+                description: "Complete audit trail of all data access and AI-generated recommendations for compliance reporting."
+              },
+              {
+                icon: <CheckCircle className="w-5 h-5" />,
+                title: "Access Control",
+                description: "Role-based permissions and data governance tracking to meet regulatory requirements."
+              }
+            ].map((feature, i) => (
+              <div key={i} className="p-5 rounded-xl bg-white/5 border border-white/10">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary mb-3">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-white">{feature.title}</h3>
+                <p className="text-sm text-white/60">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          {/* Vanta Badge */}
+          <div className="flex flex-col items-center">
+            <div className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 border border-white/10">
+              <div className="w-10 h-10 rounded-lg bg-[#5865F2] flex items-center justify-center">
+                <Shield className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <div className="text-white font-semibold">Powered by Vanta</div>
+                <div className="text-white/60 text-sm">Automated SOC 2 compliance & security monitoring</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-6 mt-6 text-white/50 text-sm">
+              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-primary" /> Continuous monitoring</span>
+              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-primary" /> Audit-ready reports</span>
+              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-primary" /> SOC 2 Type II</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2a2520]">
             Stop Losing Business Members to Fintechs
           </h2>
-          <p className="text-lg text-[#5a5550] mb-8">
+          <p className="text-lg text-[#5a5550] mb-4">
             See which of your members are running businesses — and start the conversation before someone else does.
+          </p>
+          <p className="text-sm text-primary font-medium mb-8">
+            Enterprise-ready from day one — with built-in compliance powered by Vanta.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-primary text-white hover:bg-primary/90 text-lg px-8 py-6">
