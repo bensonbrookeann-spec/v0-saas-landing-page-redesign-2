@@ -393,10 +393,14 @@ export default function MemberSignalLanding() {
             <Link href="#pricing" className="text-sm text-[#5a5550] hover:text-[#2a2520] transition-colors">Pricing</Link>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="ghost" className="text-[#2a2520]">Sign In</Button>
-            <Button className="bg-primary text-white hover:bg-primary/90">
-              Get Started
-            </Button>
+            <Link href="/dashboard">
+              <Button variant="ghost" className="text-[#2a2520]">Sign In</Button>
+            </Link>
+            <Link href="/dashboard">
+              <Button className="bg-primary text-white hover:bg-primary/90">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>
