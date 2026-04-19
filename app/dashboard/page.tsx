@@ -291,8 +291,8 @@ export default function LeadListDashboard() {
                     {member.branch}
                   </span>
                 </td>
-                <td className="py-4 px-5 text-[#3d3530] text-sm max-w-md">
-                  <p className="leading-relaxed">
+                <td className="py-4 px-5 text-[#5a5048] text-xs min-w-80">
+                  <p className="line-clamp-2 leading-relaxed">
                     {member.summary}
                   </p>
                 </td>
