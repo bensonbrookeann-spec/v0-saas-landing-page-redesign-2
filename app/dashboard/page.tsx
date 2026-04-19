@@ -301,7 +301,7 @@ export default function LeadListDashboard() {
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <p className="line-clamp-2 leading-relaxed cursor-help">
+                        <p className="line-clamp-3 leading-snug cursor-help">
                           {member.summary}
                         </p>
                       </TooltipTrigger>
