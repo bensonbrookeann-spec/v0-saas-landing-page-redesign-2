@@ -31,9 +31,9 @@ export default function DashboardLayout({
   const pathname = usePathname()
 
   return (
-    <div className="min-h-screen flex bg-[#1a1814]">
+    <div className="min-h-screen flex bg-[#2d2926]">
       {/* Sidebar */}
-      <aside className="w-20 bg-[#1a1814] border-r border-[#2a2520] flex flex-col items-center py-6">
+      <aside className="w-20 bg-[#2d2926] border-r border-[#3d3936] flex flex-col items-center py-6">
         {/* Logo */}
         <Link href="/dashboard" className="mb-8">
           <MemberSignalLogo className="w-8 h-8 text-primary" />
@@ -71,7 +71,7 @@ export default function DashboardLayout({
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Top Header */}
-        <header className="h-14 bg-[#1a1814] border-b border-[#2a2520] px-6 flex items-center justify-between">
+        <header className="h-14 bg-[#2d2926] border-b border-[#3d3936] px-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <MemberSignalLogo className="w-6 h-6 text-primary" />
             <span className="text-primary font-semibold text-lg">MemberSignal</span>
@@ -94,7 +94,7 @@ export default function DashboardLayout({
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 bg-[#faf8f5] overflow-auto">
+        <main className="flex-1 bg-[#f0ebe4] overflow-auto">
           {children}
         </main>
       </div>
