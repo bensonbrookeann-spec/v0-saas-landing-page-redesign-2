@@ -11,78 +11,84 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 // Mock data for the lead list
 const mockMembers = [
   {
     id: "1",
     rank: 1,
-    name: "MemberSignal",
+    name: "Sarah Mitchell",
     score: 92,
     drivers: [{ name: "PayPal", color: "bg-[#003087]" }],
-    tenure: "2 year",
-    branch: "Branch",
-    summary: "Member wrvonattemised the poll ist business commatilened financl ain...",
+    tenure: "2 years",
+    branch: "Downtown",
+    summary: "High-volume PayPal deposits averaging $12K/month suggest established e-commerce business. Recent activity spike indicates seasonal inventory preparation.",
   },
   {
     id: "2",
     rank: 2,
-    name: "Man Cutkatch",
+    name: "Marcus Chen",
     score: 85,
     drivers: [{ name: "Shopify", color: "bg-[#96bf48]" }, { name: "Square", color: "bg-black" }],
     tenure: "1 year",
-    branch: "Branch",
-    summary: "Business processed integeer for business soarhisms and common...",
+    branch: "Westside",
+    summary: "Dual payment processor usage with Shopify and Square indicates omnichannel retail operation. Monthly deposits growing 15% quarter-over-quarter.",
   },
   {
     id: "3",
     rank: 3,
-    name: "Keri Hoeon",
+    name: "Jennifer Rodriguez",
     score: 78,
     drivers: [{ name: "Shopify", color: "bg-[#96bf48]" }],
     tenure: "1 year",
-    branch: "Branch",
-    summary: "AI Summary is an astion ooe edd custemirevis and vere business to...",
+    branch: "Northgate",
+    summary: "Consistent Shopify payouts of $8K weekly point to successful online storefront. Transaction patterns suggest subscription-based product offering.",
   },
   {
     id: "4",
     rank: 4,
-    name: "Sane Velmand",
+    name: "David Thompson",
     score: 72,
     drivers: [{ name: "PayPal", color: "bg-[#003087]" }],
     tenure: "4 years",
-    branch: "Mamontarg",
-    summary: "Member itosoo.oneeon iommerce and to end rcoanstmieved business...",
+    branch: "Eastlake",
+    summary: "Long-tenured member with steady PayPal income stream. Recent increase in transaction frequency suggests business expansion or new revenue channel.",
   },
   {
     id: "5",
     rank: 5,
-    name: "Mark Sannet",
+    name: "Amanda Foster",
     score: 68,
     drivers: [{ name: "Shopify", color: "bg-[#96bf48]" }, { name: "Square", color: "bg-black" }],
-    tenure: "2 year",
-    branch: "Branch",
-    summary: "AI Summary is an action nne for business strergting commonailry s...",
+    tenure: "2 years",
+    branch: "Downtown",
+    summary: "Mixed online and in-person sales via Shopify and Square. Seasonal patterns indicate retail business with strong Q4 performance historically.",
   },
   {
     id: "6",
     rank: 6,
-    name: "David Sternson",
+    name: "Robert Kim",
     score: 65,
     drivers: [{ name: "PayPal", color: "bg-[#003087]" }],
-    tenure: "2 year",
-    branch: "Branch",
-    summary: "AI Summary hoslirinare and ado evaluate amy stort account tenure...",
+    tenure: "2 years",
+    branch: "Westside",
+    summary: "Regular PayPal deposits consistent with freelance or consulting income. Invoice-style payment patterns suggest B2B service provider.",
   },
   {
     id: "7",
     rank: 7,
-    name: "James Moare",
+    name: "Lisa Patel",
     score: 58,
     drivers: [{ name: "Square", color: "bg-black" }],
     tenure: "1 year",
-    branch: "Branch",
-    summary: "Member in nonnlocstle:shrel.wot business iieoormen fer:tranalotr bi...",
+    branch: "Northgate",
+    summary: "Square-only transactions indicate brick-and-mortar focus. Weekend transaction spikes suggest food service or retail establishment.",
   },
 ]
 
@@ -260,8 +266,22 @@ export default function LeadListDashboard() {
                     {member.branch}
                   </span>
                 </td>
-                <td className="py-3 px-4 text-white/50 text-xs max-w-48 truncate">
-                  {member.summary}
+                <td className="py-3 px-4 text-white/70 text-xs max-w-xs">
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <p className="line-clamp-2 cursor-help leading-relaxed">
+                          {member.summary}
+                        </p>
+                      </TooltipTrigger>
+                      <TooltipContent 
+                        side="top" 
+                        className="max-w-sm bg-[#2a2520] border-[#3a3530] text-white/90 p-3"
+                      >
+                        <p className="text-xs leading-relaxed">{member.summary}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 </td>
                 <td className="py-3 px-4">
                   <Link href={`/dashboard/outreach/${member.id}`}>
