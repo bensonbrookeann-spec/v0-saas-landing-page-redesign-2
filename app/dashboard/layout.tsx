@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { BarChart3, Users, Send, Settings, Bell } from "lucide-react"
+import { BarChart3, Send, Settings, Bell } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // MemberSignal Logo Component
@@ -18,7 +18,6 @@ function MemberSignalLogo({ className = "" }: { className?: string }) {
 
 const navItems = [
   { href: "/dashboard", icon: BarChart3, label: "Dashboard" },
-  { href: "/dashboard/members", icon: Users, label: "Members" },
   { href: "/dashboard/outreach", icon: Send, label: "Outreach" },
   { href: "/dashboard/settings", icon: Settings, label: "Settings" },
 ]
